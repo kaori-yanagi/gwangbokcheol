@@ -1,15 +1,15 @@
 const path = require('path');
 
 module.exports = {
-  mode: "development",
+  mode: "production",
   entry: "./src/index.js",
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, 'public'),  // ✅ 正しい書き方
     filename: "bundle.js",
   },
   devServer: {
     static: {
-      directory: path.join(__dirname, 'public'),
+      directory: path.resolve(__dirname, 'public'), // ✅ 絶対パスを使う
     },
     compress: true,
     port: 9000,
